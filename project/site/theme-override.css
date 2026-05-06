@@ -1,0 +1,169 @@
+/* ============================================================
+   Site theme override — white background, black text, no green.
+   Loaded AFTER styles.css so it wins on cascade.
+   We remap brand tokens to a neutral monochrome palette and then
+   patch a handful of selectors that hard-coded sage colors.
+   ============================================================ */
+
+:root {
+  /* --- Neutralise the sage scale to warm-free grays --------- */
+  --sage-50:  #f4f4f4;
+  --sage-100: #ececec;
+  --sage-200: #d9d9d9;
+  --sage-300: #b8b8b8;
+  --sage-400: #8c8c8c;
+  --sage-500: #1a1a1a;   /* "primary" → near-black */
+  --sage-600: #0f0f0f;
+  --sage-700: #000000;
+  --sage-800: #000000;
+  --sage-900: #000000;
+
+  /* --- Cream / paper → pure white + light gray ------------- */
+  --cream-50:  #ffffff;
+  --cream-100: #f7f7f7;
+  --cream-200: #ececec;
+  --cream-300: #d9d9d9;
+
+  /* --- Ink → true blacks / grays --------------------------- */
+  --ink-900: #000000;
+  --ink-700: #1f1f1f;
+  --ink-500: #555555;
+  --ink-400: #7a7a7a;
+  --ink-300: #b0b0b0;
+  --ink-200: #d9d9d9;
+
+  /* --- Logo accents — keep orange for warnings, drop green - */
+  --logo-orange: #c46a00;
+  --logo-blue:   #888888;
+  --logo-green:  #1a1a1a;   /* repurpose to black */
+
+  /* --- Semantic -------------------------------------------- */
+  --bg-page:        #ffffff;
+  --bg-surface:     #ffffff;
+  --bg-surface-alt: #f7f7f7;
+  --bg-muted:       #f4f4f4;
+  --bg-emphasis:    #000000;
+  --bg-emergency:   var(--logo-orange);
+
+  --fg-default:     #000000;
+  --fg-muted:       #555555;
+  --fg-subtle:      #7a7a7a;
+  --fg-on-emphasis: #ffffff;
+  --fg-link:        #000000;
+  --fg-link-hover:  #555555;
+
+  --border-soft:   #e5e5e5;
+  --border-strong: #cccccc;
+  --divider:       #ececec;
+
+  --focus-ring: 0 0 0 3px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================================
+   Patch hard-coded sage references in styles.css
+   ============================================================ */
+
+body { background: #ffffff; color: #000000; }
+h1, h2, h3, h4 { color: #000000; }
+
+/* Hero accents */
+.hero__title em { color: #000000; font-style: italic; }
+.hero__status { color: #000000; }
+.status-dot {
+  background: #000000;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.12);
+}
+
+/* Eyebrow no longer green */
+.eyebrow { color: #000000; }
+.eyebrow--on-dark { color: #cfcfcf; }
+
+/* Buttons — solid black primary */
+.btn--primary { background: #000000; color: #ffffff; }
+.btn--primary:hover { background: #2a2a2a; }
+.btn--secondary { background: #ffffff; color: #000000; border-color: #cccccc; }
+.btn--secondary:hover { background: #f4f4f4; }
+.btn--ghost { background: transparent; color: #000000; }
+.btn--ghost:hover { background: #f4f4f4; }
+
+/* Tags */
+.tag { background: #f0f0f0; color: #000000; }
+.tag--ochre { background: rgba(196, 106, 0, 0.12); color: #7a4200; }
+
+/* Header */
+.site-header { background: rgba(255, 255, 255, 0.9); border-bottom: 1px solid #e5e5e5; }
+.site-header__nav a { color: #000000; }
+.site-header__nav a:hover { color: #000000; border-bottom-color: #b0b0b0; }
+.site-header__nav a.is-active { color: #000000; border-bottom-color: #000000; }
+.site-header__cta-mobile { background: #000000; color: #ffffff; }
+
+/* Mobile sheet */
+.mobile-sheet { background: #ffffff; }
+.mobile-sheet__nav a { color: #000000; }
+.mobile-sheet__cta { background: #000000; color: #ffffff; }
+
+/* Philosophy band — soft gray, black quote */
+.philosophy { background: #f7f7f7; border-color: #e5e5e5; }
+.philosophy__quote { color: #000000; }
+.philosophy__quote em { color: #000000; font-style: italic; }
+
+/* Quick info */
+.info-card__icon { background: #f4f4f4; color: #000000; }
+.info-card__link { color: #000000; }
+.info-card__link:hover { color: #555555; }
+
+/* Doctor preview band */
+.doctors-preview { background: #f7f7f7; }
+.doctor-card__photo { background-color: #ececec; }
+
+/* News */
+.news--bg { background: #f7f7f7; }
+.news-item__more { color: #000000; }
+
+/* Services */
+.service-row__icon { background: #f4f4f4; color: #000000; }
+
+/* Team page */
+.team-doctor__photo { background-color: #ececec; }
+.mfa-section { background: #f7f7f7; border-top-color: #e5e5e5; }
+.mfa-grid__photo { background-color: #ececec; }
+.mfa-grid__no-photo {
+  background: #f4f4f4; border: 2px dashed #b8b8b8; color: #000000;
+}
+
+/* Locations */
+.location-block--alt { background: #f7f7f7; }
+.location-block__pill { background: #000000; color: #ffffff; }
+.location-block__pill--alt { background: #ffffff; color: #000000; }
+.location-block__feats i { color: #000000; }
+
+/* Contact */
+.contact-line__icon { background: #f4f4f4; color: #000000; }
+.contact-line__value a:hover { color: #555555; }
+.contact-map__pin i { color: #000000; }
+
+/* Phone strip — black band, white text */
+.phone-strip { background: #000000; color: #ffffff; }
+.phone-strip h2 { color: #ffffff; }
+.phone-strip p { color: rgba(255, 255, 255, 0.85); }
+.phone-strip__big {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.phone-strip__big i { color: #ffffff; }
+.phone-strip__big-num { color: #ffffff; }
+.phone-strip__sub { color: rgba(255, 255, 255, 0.7); }
+
+/* Logo — desaturate so the green dot disappears site-wide */
+.site-header__brand img,
+.mobile-sheet__head img { filter: grayscale(1) contrast(1.05); }
+
+/* Footer */
+.site-footer { background: #000000; color: #ffffff; }
+.site-footer a { color: #ffffff; }
+.site-footer a:hover { color: #b0b0b0; }
+.site-footer__head { color: #b0b0b0; }
+.site-footer__legal em { color: var(--logo-orange); }
+
+/* Legal pages — drop sage left-bar on address */
+.legal address { background: #f7f7f7; border-left-color: #000000; }

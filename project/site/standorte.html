@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Standorte — Schönhärl · Kroehling · Gloßner</title>
+  <meta name="description" content="Hauptpraxis Pielenhofen und Filialpraxis Wolfsegg. Adressen, Sprechzeiten, Anfahrt und Barrierefreiheit." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="theme-override.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body data-page="standorte">
+  <div data-slot="header"></div>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <div class="page-head__crumb"><a href="index.html">Startseite</a> &nbsp;·&nbsp; Standorte</div>
+        <h1>Zwei Häuser im Naabtal.</h1>
+        <p class="page-head__lead">
+          Unsere Hauptpraxis in Pielenhofen ist die zentrale Anlaufstelle.
+          In der Filialpraxis Wolfsegg bieten wir Sprechstunde und Blutabnahmen
+          wohnortnah an.
+        </p>
+      </div>
+    </section>
+
+    <section class="location-block" id="pielenhofen">
+      <div class="container location-block__inner">
+        <div class="location-block__photo" style="background-image:url('../assets/interior-1.png')">
+          <span class="location-block__pill">Hauptpraxis</span>
+        </div>
+        <div>
+          <div class="eyebrow">Pielenhofen</div>
+          <h2>Praxis Pielenhofen</h2>
+          <p class="location-block__address">
+            Etterzhausener Str. 20<br/>
+            93188 Pielenhofen
+          </p>
+
+          <div class="hours-card__title" style="margin-bottom:10px"><i data-lucide="clock"></i><span>Sprechzeiten</span></div>
+          <table class="hours-card__table" style="max-width:480px">
+            <tbody>
+              <tr><td>Montag – Donnerstag</td><td>07:30 – 12:00 · 15:00 – 18:00</td></tr>
+              <tr><td>Freitag</td><td>07:30 – 12:00</td></tr>
+              <tr class="muted"><td>Samstag · Sonntag</td><td>geschlossen</td></tr>
+            </tbody>
+          </table>
+
+          <div class="location-block__feats">
+            <span><i data-lucide="accessibility"></i> Barrierefreier Eingang</span>
+            <span><i data-lucide="circle-parking"></i> Eigene Parkplätze</span>
+            <span><i data-lucide="check"></i> Behinderten-WC</span>
+          </div>
+
+          <div class="location-block__ctas">
+            <a class="btn btn--primary" href="tel:+4994098629 0"><i data-lucide="phone"></i> 09409 / 86290</a>
+            <a class="btn btn--secondary" href="https://www.google.com/maps/dir/?api=1&destination=Etterzhausener+Str.+20,+93188+Pielenhofen" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> Route planen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-block location-block--alt" id="wolfsegg">
+      <div class="container location-block__inner" style="direction:rtl">
+        <div class="location-block__photo" style="background-image:url('../assets/pielenhofen-landscape.png'); direction:ltr">
+          <span class="location-block__pill location-block__pill--alt">Filialpraxis</span>
+        </div>
+        <div style="direction:ltr">
+          <div class="eyebrow">Wolfsegg</div>
+          <h2>Praxis Wolfsegg</h2>
+          <p class="location-block__address">
+            Filialpraxis Wolfsegg<br/>
+            Sprechstunde &amp; Blutabnahmen
+          </p>
+
+          <div class="location-block__note">
+            <i data-lucide="alert-circle"></i>
+            <div>
+              <strong>Hinweis Freitag:</strong> Blutentnahmen bitte spätestens
+              bis <strong>10:15 Uhr</strong> — danach holt der Labordienst ab.
+            </div>
+          </div>
+
+          <div class="hours-card__title" style="margin-bottom:10px"><i data-lucide="clock"></i><span>Sprechzeiten</span></div>
+          <p style="font-size:15px; color:var(--ink-500); margin:0 0 14px;">
+            Genaue Sprechzeiten erhalten Sie telefonisch unter 09409 / 86290.
+          </p>
+
+          <div class="location-block__feats">
+            <span><i data-lucide="accessibility"></i> Barrierefrei</span>
+            <span><i data-lucide="droplet"></i> Blutabnahmen</span>
+          </div>
+
+          <div class="location-block__ctas">
+            <a class="btn btn--primary" href="tel:+4994098629 0"><i data-lucide="phone"></i> 09409 / 86290</a>
+            <a class="btn btn--secondary" href="https://www.google.com/maps/search/?api=1&query=Wolfsegg+Oberpfalz" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> Auf Karte anzeigen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div data-slot="phone-strip"></div>
+  </main>
+
+  <div data-slot="footer"></div>
+  <script src="site.js"></script>
+</body>
+</html>

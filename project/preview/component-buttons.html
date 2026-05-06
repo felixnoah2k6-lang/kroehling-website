@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  .btn { display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:999px; font-family:var(--font-sans); font-weight:600; font-size:16px; border:1px solid transparent; cursor:pointer; }
+  .btn-primary { background:var(--sage-500); color:#faf7f1; }
+  .btn-secondary { background:#fff; color:var(--sage-700); border-color:var(--border-strong); }
+  .btn-ghost { background:transparent; color:var(--sage-700); }
+  .btn-emergency { background:#f0a020; color:#2a2620; }
+  .btn svg { width:18px; height:18px; stroke-width:1.75; }
+</style></head>
+<body>
+  <div class="label-eyebrow">Buttons</div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+    <button class="btn btn-primary"><i data-lucide="phone"></i>Jetzt anrufen</button>
+    <button class="btn btn-secondary"><i data-lucide="map-pin"></i>Anfahrt</button>
+    <button class="btn btn-ghost">Mehr erfahren <i data-lucide="arrow-right"></i></button>
+    <button class="btn btn-emergency"><i data-lucide="activity"></i>Notdienst</button>
+  </div>
+  <div style="font-family:var(--font-sans);font-size:12px;color:var(--ink-500);margin-top:14px">
+    Pill radius · 14×22 padding · stroke-1.75 lucide icons. Hover: darken sage one stop. Press: scale 0.98.
+  </div>
+  <script>lucide.createIcons();</script>
+</body></html>
