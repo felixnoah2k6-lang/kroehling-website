@@ -1,19 +1,19 @@
 /* ============================================================
-   Site theme override — white background, black text, sage accents.
+   Site theme override — pure black & white, no color accents.
    ============================================================ */
 
 :root {
-  /* --- Sage accent (restored at lower intensity) ------------ */
-  --accent:       #4a6e43;
-  --accent-light: #edf3eb;
-  --accent-mid:   #c8d9c4;
+  /* --- Monochrome accent (replaces sage) -------------------- */
+  --accent:       #111111;
+  --accent-light: #f0f0f0;
+  --accent-mid:   #cccccc;
 
-  /* --- Neutralise the sage scale to warm-ish grays ---------- */
-  --sage-50:  #f2f5f1;
-  --sage-100: #e6ede4;
-  --sage-200: #ccdac8;
-  --sage-300: #b0c4ab;
-  --sage-400: #7a9e74;
+  /* --- Neutralise the sage scale to grays ------------------- */
+  --sage-50:  #f7f7f7;
+  --sage-100: #ececec;
+  --sage-200: #d9d9d9;
+  --sage-300: #b0b0b0;
+  --sage-400: #7a7a7a;
   --sage-500: #1a1a1a;
   --sage-600: #0f0f0f;
   --sage-700: #000000;
@@ -43,7 +43,7 @@
   --bg-page:        #ffffff;
   --bg-surface:     #ffffff;
   --bg-surface-alt: #f7f7f7;
-  --bg-muted:       #f2f5f1;
+  --bg-muted:       #f2f2f2;
   --bg-emphasis:    #1a1a1a;
   --bg-emergency:   var(--logo-orange);
 
@@ -52,13 +52,13 @@
   --fg-subtle:      #7a7a7a;
   --fg-on-emphasis: #ffffff;
   --fg-link:        #111111;
-  --fg-link-hover:  var(--accent);
+  --fg-link-hover:  #555555;
 
   --border-soft:   #e5e5e5;
   --border-strong: #cccccc;
   --divider:       #ececec;
 
-  --focus-ring: 0 0 0 3px rgba(74, 110, 67, 0.3);
+  --focus-ring: 0 0 0 3px rgba(17, 17, 17, 0.25);
 }
 
 /* ============================================================
@@ -97,7 +97,7 @@ h1, h2, h3, h4 { color: #111111; }
 }
 .hero__content--light h1,
 .hero__content--light .hero__title { color: #ffffff; }
-.hero__content--light .hero__title em { color: #d4e8d0; font-style: italic; }
+.hero__content--light .hero__title em { color: #e8e8e8; font-style: italic; }
 .hero__content--light .hero__lead { color: rgba(255,255,255,0.88); }
 
 .hero__status--light {
@@ -106,8 +106,8 @@ h1, h2, h3, h4 { color: #111111; }
   display: inline-flex; align-items: center; gap: 10px;
 }
 .hero__status--light .status-dot {
-  background: #7ecf78;
-  box-shadow: 0 0 0 4px rgba(126, 207, 120, 0.28);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.28);
 }
 
 /* Outline-light button (for use on dark hero backgrounds) */
@@ -128,10 +128,10 @@ h1, h2, h3, h4 { color: #111111; }
 }
 
 /* ============================================================
-   Eyebrow — sage accent restored
+   Eyebrow — black/dark gray, no green
    ============================================================ */
-.eyebrow { color: var(--accent); }
-.eyebrow--on-dark { color: rgba(200,220,196,0.9); }
+.eyebrow { color: #555555; }
+.eyebrow--on-dark { color: rgba(255, 255, 255, 0.7); }
 
 /* ============================================================
    Buttons
@@ -141,13 +141,13 @@ h1, h2, h3, h4 { color: #111111; }
 .btn--secondary { background: #ffffff; color: #111111; border-color: #cccccc; }
 .btn--secondary:hover { background: #f4f4f4; border-color: #aaaaaa; }
 .btn--ghost { background: transparent; color: #111111; }
-.btn--ghost:hover { background: var(--accent-light); color: var(--accent); }
+.btn--ghost:hover { background: #f0f0f0; color: #111111; }
 
 /* ============================================================
-   Tags
+   Tags — gray/monochrome
    ============================================================ */
-.tag { background: var(--accent-light); color: var(--accent); }
-.tag--ochre { background: rgba(196, 106, 0, 0.12); color: #7a4200; }
+.tag { background: #f0f0f0; color: #333333; }
+.tag--ochre { background: #f0f0f0; color: #333333; }
 
 /* ============================================================
    Header
@@ -159,8 +159,8 @@ h1, h2, h3, h4 { color: #111111; }
   -webkit-backdrop-filter: blur(16px);
 }
 .site-header__nav a { color: #111111; }
-.site-header__nav a:hover { color: var(--accent); border-bottom-color: var(--accent-mid); }
-.site-header__nav a.is-active { color: var(--accent); border-bottom-color: var(--accent); }
+.site-header__nav a:hover { color: #555555; border-bottom-color: #999999; }
+.site-header__nav a.is-active { color: #111111; border-bottom-color: #111111; }
 .site-header__cta-mobile { background: #111111; color: #ffffff; }
 
 /* Logo — full color, no grayscale */
@@ -179,16 +179,16 @@ h1, h2, h3, h4 { color: #111111; }
    ============================================================ */
 .philosophy { background: #f7f7f7; border-color: #e5e5e5; }
 .philosophy__quote { color: #111111; }
-.philosophy__quote em { color: var(--accent); font-style: italic; }
+.philosophy__quote em { color: #555555; font-style: italic; }
 
 /* ============================================================
-   Quick info cards — hover with sage accent border
+   Quick info cards — monochrome
    ============================================================ */
 .info-card { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
-.info-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px -10px rgba(0,0,0,0.12); border-color: var(--accent-mid); }
-.info-card__icon { background: var(--accent-light); color: var(--accent); }
-.info-card__link { color: var(--accent); }
-.info-card__link:hover { color: #2d4a29; }
+.info-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px -10px rgba(0,0,0,0.12); border-color: #999999; }
+.info-card__icon { background: #f0f0f0; color: #111111; }
+.info-card__link { color: #111111; }
+.info-card__link:hover { color: #555555; }
 
 /* ============================================================
    Doctor preview cards
@@ -196,7 +196,7 @@ h1, h2, h3, h4 { color: #111111; }
 .doctors-preview { background: #f7f7f7; }
 .doctor-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .doctor-card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px -12px rgba(0,0,0,0.14); }
-.doctor-card__photo { background-color: #d8e8d4; }
+.doctor-card__photo { background-color: #e8e8e8; }
 
 /* ============================================================
    News items
@@ -204,15 +204,15 @@ h1, h2, h3, h4 { color: #111111; }
 .news--bg { background: #f7f7f7; }
 .news-item { transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .news-item:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -8px rgba(0,0,0,0.11); }
-.news-item__more { color: var(--accent); }
-.news-item__more:hover { color: #2d4a29; }
+.news-item__more { color: #111111; }
+.news-item__more:hover { color: #555555; }
 
 /* ============================================================
    Services
    ============================================================ */
 .service-row { transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .service-row:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -8px rgba(0,0,0,0.10); }
-.service-row__icon { background: var(--accent-light); color: var(--accent); }
+.service-row__icon { background: #f0f0f0; color: #111111; }
 
 /* Services team band (Leistungen page) */
 .services-team-band {
@@ -240,13 +240,13 @@ h1, h2, h3, h4 { color: #111111; }
 /* ============================================================
    Team page
    ============================================================ */
-.team-doctor__photo { background-color: #d8e8d4; }
+.team-doctor__photo { background-color: #e8e8e8; }
 .mfa-section { background: #f7f7f7; border-top-color: #e5e5e5; }
-.mfa-grid__photo { background-color: #d8e8d4; }
+.mfa-grid__photo { background-color: #e8e8e8; }
 .mfa-grid__no-photo {
-  background: var(--accent-light);
-  border: 2px dashed var(--accent-mid);
-  color: var(--accent);
+  background: #f0f0f0;
+  border: 2px dashed #cccccc;
+  color: #555555;
 }
 
 /* ============================================================
@@ -255,17 +255,17 @@ h1, h2, h3, h4 { color: #111111; }
 .location-block--alt { background: #f7f7f7; }
 .location-block__pill { background: #111111; color: #ffffff; }
 .location-block__pill--alt { background: #ffffff; color: #111111; }
-.location-block__feats i { color: var(--accent); }
+.location-block__feats i { color: #111111; }
 
 /* ============================================================
    Contact
    ============================================================ */
-.contact-line__icon { background: var(--accent-light); color: var(--accent); }
-.contact-line__value a:hover { color: var(--accent); }
-.contact-map__pin i { color: var(--accent); }
+.contact-line__icon { background: #f0f0f0; color: #111111; }
+.contact-line__value a:hover { color: #555555; }
+.contact-map__pin i { color: #111111; }
 
 /* ============================================================
-   Phone strip — dark, slightly warm
+   Phone strip — dark, monochrome
    ============================================================ */
 .phone-strip { background: #1a1a1a; color: #ffffff; }
 .phone-strip h2 { color: #ffffff; }
@@ -276,28 +276,41 @@ h1, h2, h3, h4 { color: #111111; }
   transition: background 0.2s ease;
 }
 .phone-strip__big:hover { background: rgba(255,255,255,0.12); }
-.phone-strip__big i { color: #a8d4a3; }
+.phone-strip__big i { color: #ffffff; }
 .phone-strip__big-num { color: #ffffff; }
 .phone-strip__sub { color: rgba(255, 255, 255, 0.65); }
-.eyebrow.eyebrow--on-dark { color: rgba(200,220,196,0.9); }
+.eyebrow.eyebrow--on-dark { color: rgba(255, 255, 255, 0.7); }
 
 /* ============================================================
-   Footer — lighter warm dark (not pure black)
+   Footer — light, matching the rest of the site
    ============================================================ */
-.site-footer { background: #1e1b17; color: #e8e4dd; }
-.site-footer a { color: #e8e4dd; }
-.site-footer a:hover { color: #a8d4a3; }
-.site-footer__brand p { color: rgba(232, 228, 221, 0.65); }
-.site-footer__head { color: #a8d4a3; letter-spacing: 0.18em; }
-.site-footer__legal { color: rgba(232, 228, 221, 0.65); }
-.site-footer__legal em { color: #e0a060; }
-.site-footer__bottom { color: rgba(232, 228, 221, 0.42); border-top-color: rgba(255,255,255,0.10); }
-.site-footer__brand img { filter: brightness(0) invert(1) opacity(0.9); }
+.site-footer {
+  background: #ffffff;
+  color: #333333;
+  border-top: 1px solid #e5e5e5;
+}
+.site-footer a { color: #333333; transition: color 0.2s ease; }
+.site-footer a:hover { color: #000000; text-decoration: underline; }
+.site-footer__brand p { color: #666666; }
+.site-footer__head {
+  color: #111111;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.site-footer__legal { color: #666666; }
+.site-footer__legal em { color: #555555; font-style: normal; }
+.site-footer__bottom {
+  color: #888888;
+  border-top-color: #ececec;
+}
+.site-footer__brand img { filter: none; }
 
 /* ============================================================
    Legal pages
    ============================================================ */
-.legal address { background: #f2f5f1; border-left-color: var(--accent); }
+.legal address { background: #f7f7f7; border-left-color: #111111; }
 
 /* ============================================================
    Scroll fade-in animations
