@@ -1,0 +1,320 @@
+/* ============================================================
+   Site theme override — white background, black text, sage accents.
+   ============================================================ */
+
+:root {
+  /* --- Sage accent (restored at lower intensity) ------------ */
+  --accent:       #4a6e43;
+  --accent-light: #edf3eb;
+  --accent-mid:   #c8d9c4;
+
+  /* --- Neutralise the sage scale to warm-ish grays ---------- */
+  --sage-50:  #f2f5f1;
+  --sage-100: #e6ede4;
+  --sage-200: #ccdac8;
+  --sage-300: #b0c4ab;
+  --sage-400: #7a9e74;
+  --sage-500: #1a1a1a;
+  --sage-600: #0f0f0f;
+  --sage-700: #000000;
+  --sage-800: #000000;
+  --sage-900: #000000;
+
+  /* --- Cream / paper → pure white + light gray ------------- */
+  --cream-50:  #ffffff;
+  --cream-100: #f7f7f7;
+  --cream-200: #ececec;
+  --cream-300: #d9d9d9;
+
+  /* --- Ink → true blacks / grays --------------------------- */
+  --ink-900: #111111;
+  --ink-700: #1f1f1f;
+  --ink-500: #555555;
+  --ink-400: #7a7a7a;
+  --ink-300: #b0b0b0;
+  --ink-200: #d9d9d9;
+
+  /* --- Logo accents ---------------------------------------- */
+  --logo-orange: #c46a00;
+  --logo-blue:   #6882cc;
+  --logo-green:  #1ea876;
+
+  /* --- Semantic -------------------------------------------- */
+  --bg-page:        #ffffff;
+  --bg-surface:     #ffffff;
+  --bg-surface-alt: #f7f7f7;
+  --bg-muted:       #f2f5f1;
+  --bg-emphasis:    #1a1a1a;
+  --bg-emergency:   var(--logo-orange);
+
+  --fg-default:     #111111;
+  --fg-muted:       #555555;
+  --fg-subtle:      #7a7a7a;
+  --fg-on-emphasis: #ffffff;
+  --fg-link:        #111111;
+  --fg-link-hover:  var(--accent);
+
+  --border-soft:   #e5e5e5;
+  --border-strong: #cccccc;
+  --divider:       #ececec;
+
+  --focus-ring: 0 0 0 3px rgba(74, 110, 67, 0.3);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+body { background: #ffffff; color: #111111; }
+h1, h2, h3, h4 { color: #111111; }
+
+/* ============================================================
+   Hero — background-image variant
+   ============================================================ */
+.hero--bg {
+  position: relative;
+  background-size: cover;
+  background-position: center 30%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  padding: var(--space-10) 0;
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(10, 10, 10, 0.72) 0%,
+    rgba(10, 10, 10, 0.50) 55%,
+    rgba(10, 10, 10, 0.30) 100%
+  );
+}
+.hero__inner--centered {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: 1fr;
+  max-width: 720px;
+}
+.hero__content--light h1,
+.hero__content--light .hero__title { color: #ffffff; }
+.hero__content--light .hero__title em { color: #d4e8d0; font-style: italic; }
+.hero__content--light .hero__lead { color: rgba(255,255,255,0.88); }
+
+.hero__status--light {
+  color: rgba(255,255,255,0.9);
+  font-family: var(--font-sans); font-weight: 600; font-size: 15px;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.hero__status--light .status-dot {
+  background: #7ecf78;
+  box-shadow: 0 0 0 4px rgba(126, 207, 120, 0.28);
+}
+
+/* Outline-light button (for use on dark hero backgrounds) */
+.btn--outline-light {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.65);
+}
+.btn--outline-light:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+@media (max-width: 960px) {
+  .hero--bg { min-height: 520px; padding: var(--space-9) 0; }
+  .hero__inner--centered { max-width: 100%; }
+}
+
+/* ============================================================
+   Eyebrow — sage accent restored
+   ============================================================ */
+.eyebrow { color: var(--accent); }
+.eyebrow--on-dark { color: rgba(200,220,196,0.9); }
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn--primary { background: #111111; color: #ffffff; }
+.btn--primary:hover { background: #2e2e2e; }
+.btn--secondary { background: #ffffff; color: #111111; border-color: #cccccc; }
+.btn--secondary:hover { background: #f4f4f4; border-color: #aaaaaa; }
+.btn--ghost { background: transparent; color: #111111; }
+.btn--ghost:hover { background: var(--accent-light); color: var(--accent); }
+
+/* ============================================================
+   Tags
+   ============================================================ */
+.tag { background: var(--accent-light); color: var(--accent); }
+.tag--ochre { background: rgba(196, 106, 0, 0.12); color: #7a4200; }
+
+/* ============================================================
+   Header
+   ============================================================ */
+.site-header {
+  background: rgba(255, 255, 255, 0.93);
+  border-bottom: 1px solid #e5e5e5;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.site-header__nav a { color: #111111; }
+.site-header__nav a:hover { color: var(--accent); border-bottom-color: var(--accent-mid); }
+.site-header__nav a.is-active { color: var(--accent); border-bottom-color: var(--accent); }
+.site-header__cta-mobile { background: #111111; color: #ffffff; }
+
+/* Logo — full color, no grayscale */
+.site-header__brand img,
+.mobile-sheet__head img { filter: none; }
+
+/* ============================================================
+   Mobile sheet
+   ============================================================ */
+.mobile-sheet { background: #ffffff; }
+.mobile-sheet__nav a { color: #111111; }
+.mobile-sheet__cta { background: #111111; color: #ffffff; }
+
+/* ============================================================
+   Philosophy band
+   ============================================================ */
+.philosophy { background: #f7f7f7; border-color: #e5e5e5; }
+.philosophy__quote { color: #111111; }
+.philosophy__quote em { color: var(--accent); font-style: italic; }
+
+/* ============================================================
+   Quick info cards — hover with sage accent border
+   ============================================================ */
+.info-card { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+.info-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px -10px rgba(0,0,0,0.12); border-color: var(--accent-mid); }
+.info-card__icon { background: var(--accent-light); color: var(--accent); }
+.info-card__link { color: var(--accent); }
+.info-card__link:hover { color: #2d4a29; }
+
+/* ============================================================
+   Doctor preview cards
+   ============================================================ */
+.doctors-preview { background: #f7f7f7; }
+.doctor-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.doctor-card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px -12px rgba(0,0,0,0.14); }
+.doctor-card__photo { background-color: #d8e8d4; }
+
+/* ============================================================
+   News items
+   ============================================================ */
+.news--bg { background: #f7f7f7; }
+.news-item { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.news-item:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -8px rgba(0,0,0,0.11); }
+.news-item__more { color: var(--accent); }
+.news-item__more:hover { color: #2d4a29; }
+
+/* ============================================================
+   Services
+   ============================================================ */
+.service-row { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.service-row:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -8px rgba(0,0,0,0.10); }
+.service-row__icon { background: var(--accent-light); color: var(--accent); }
+
+/* Services team band (Leistungen page) */
+.services-team-band {
+  padding: var(--space-9) 0;
+  background: #f7f7f7;
+  border-top: 1px solid #e8e8e8;
+}
+.services-team-band__inner {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.services-team-band__photo {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 24px 48px -20px rgba(0,0,0,0.22);
+}
+.services-team-band__copy h2 { margin: 14px 0 20px; }
+.services-team-band__copy p { margin-bottom: 28px; font-size: 17px; line-height: 1.7; color: #555555; }
+@media (max-width: 960px) {
+  .services-team-band__inner { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* ============================================================
+   Team page
+   ============================================================ */
+.team-doctor__photo { background-color: #d8e8d4; }
+.mfa-section { background: #f7f7f7; border-top-color: #e5e5e5; }
+.mfa-grid__photo { background-color: #d8e8d4; }
+.mfa-grid__no-photo {
+  background: var(--accent-light);
+  border: 2px dashed var(--accent-mid);
+  color: var(--accent);
+}
+
+/* ============================================================
+   Locations
+   ============================================================ */
+.location-block--alt { background: #f7f7f7; }
+.location-block__pill { background: #111111; color: #ffffff; }
+.location-block__pill--alt { background: #ffffff; color: #111111; }
+.location-block__feats i { color: var(--accent); }
+
+/* ============================================================
+   Contact
+   ============================================================ */
+.contact-line__icon { background: var(--accent-light); color: var(--accent); }
+.contact-line__value a:hover { color: var(--accent); }
+.contact-map__pin i { color: var(--accent); }
+
+/* ============================================================
+   Phone strip — dark, slightly warm
+   ============================================================ */
+.phone-strip { background: #1a1a1a; color: #ffffff; }
+.phone-strip h2 { color: #ffffff; }
+.phone-strip p { color: rgba(255, 255, 255, 0.82); }
+.phone-strip__big {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.18);
+  transition: background 0.2s ease;
+}
+.phone-strip__big:hover { background: rgba(255,255,255,0.12); }
+.phone-strip__big i { color: #a8d4a3; }
+.phone-strip__big-num { color: #ffffff; }
+.phone-strip__sub { color: rgba(255, 255, 255, 0.65); }
+.eyebrow.eyebrow--on-dark { color: rgba(200,220,196,0.9); }
+
+/* ============================================================
+   Footer — lighter warm dark (not pure black)
+   ============================================================ */
+.site-footer { background: #1e1b17; color: #e8e4dd; }
+.site-footer a { color: #e8e4dd; }
+.site-footer a:hover { color: #a8d4a3; }
+.site-footer__brand p { color: rgba(232, 228, 221, 0.65); }
+.site-footer__head { color: #a8d4a3; letter-spacing: 0.18em; }
+.site-footer__legal { color: rgba(232, 228, 221, 0.65); }
+.site-footer__legal em { color: #e0a060; }
+.site-footer__bottom { color: rgba(232, 228, 221, 0.42); border-top-color: rgba(255,255,255,0.10); }
+.site-footer__brand img { filter: brightness(0) invert(1) opacity(0.9); }
+
+/* ============================================================
+   Legal pages
+   ============================================================ */
+.legal address { background: #f2f5f1; border-left-color: var(--accent); }
+
+/* ============================================================
+   Scroll fade-in animations
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.10s; }
+.reveal-delay-2 { transition-delay: 0.20s; }
+.reveal-delay-3 { transition-delay: 0.30s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt — Schönhärl · Kroehling · Gloßner</title>
+  <meta name="description" content="Telefon, Adresse, Anfahrt, Parken und Barrierefreiheit der Gemeinschaftspraxis im Naabtal." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="theme-override.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body data-page="kontakt">
+  <div data-slot="header"></div>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <div class="page-head__crumb"><a href="index.html">Startseite</a> &nbsp;·&nbsp; Kontakt</div>
+        <h1>Am liebsten am Telefon.</h1>
+        <p class="page-head__lead">
+          Für Termine, Rückrufe und Fragen rufen Sie uns gerne an. Aus
+          Datenschutzgründen können wir <strong>keine Patientenanfragen
+          und keine Terminvereinbarungen per E-Mail</strong> bearbeiten.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-page">
+      <div class="container contact-page__inner">
+        <div class="contact-card">
+          <div class="contact-lines">
+            <div class="contact-line">
+              <div class="contact-line__icon"><i data-lucide="phone"></i></div>
+              <div>
+                <div class="contact-line__label">Telefon</div>
+                <div class="contact-line__value"><a href="tel:+4994098629 0">09409 / 86290</a></div>
+                <div class="contact-line__sub">Mo – Do 07:30 – 18:00 · Fr 07:30 – 12:00</div>
+              </div>
+            </div>
+            <div class="contact-line">
+              <div class="contact-line__icon"><i data-lucide="printer"></i></div>
+              <div>
+                <div class="contact-line__label">Fax</div>
+                <div class="contact-line__value">09409 / 862920</div>
+              </div>
+            </div>
+            <div class="contact-line">
+              <div class="contact-line__icon"><i data-lucide="map-pin"></i></div>
+              <div>
+                <div class="contact-line__label">Anschrift</div>
+                <div class="contact-line__value">Etterzhausener Str. 20<br/>93188 Pielenhofen</div>
+              </div>
+            </div>
+            <div class="contact-line">
+              <div class="contact-line__icon"><i data-lucide="circle-parking"></i></div>
+              <div>
+                <div class="contact-line__label">Parken</div>
+                <div class="contact-line__value">Eigene Parkplätze direkt an der Praxis</div>
+              </div>
+            </div>
+            <div class="contact-line">
+              <div class="contact-line__icon"><i data-lucide="accessibility"></i></div>
+              <div>
+                <div class="contact-line__label">Barrierefreiheit</div>
+                <div class="contact-line__value">Eingang, WC und Parkplätze rollstuhlgerecht</div>
+              </div>
+            </div>
+            <div class="contact-line">
+              <div class="contact-line__icon"><i data-lucide="bus"></i></div>
+              <div>
+                <div class="contact-line__label">Anfahrt</div>
+                <div class="contact-line__value">Mit dem Auto über die B8 / B16. ÖPNV: Bushaltestelle Pielenhofen Mitte, ca. 5 Minuten Fußweg.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-warning">
+            <strong>Hinweis zur E-Mail-Adresse</strong>
+            Die im Impressum genannte E-Mail-Adresse dient ausschließlich
+            rechtlichen Anfragen. Patientenanfragen, Krankmeldungen oder
+            Terminwünsche können wir aus Datenschutzgründen <strong>nicht
+            per E-Mail</strong> beantworten — bitte rufen Sie uns an.
+          </div>
+        </div>
+
+        <div class="contact-map" style="background-image:url('assets/pielenhofen-landscape.png')">
+          <div class="contact-map__pin">
+            <i data-lucide="map-pin"></i>
+            <div>
+              <strong>Pielenhofen</strong>
+              <span>Etterzhausener Str. 20</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div data-slot="phone-strip"></div>
+  </main>
+
+  <div data-slot="footer"></div>
+  <script src="site.js"></script>
+</body>
+</html>

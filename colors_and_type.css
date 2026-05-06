@@ -1,0 +1,170 @@
+/* ============================================================
+   Schönhärl · Kroehling · Gloßner — Design Tokens
+   Warm, calming palette for a rural Bavarian family practice.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+:root {
+  /* --- Brand · Naabtal Sage (primary) -------------------------- */
+  /* Rooted in the forested river-valley of the Naab; quietly green. */
+  --sage-50:  #f3f6f1;
+  --sage-100: #e3ecdf;
+  --sage-200: #c7d8be;
+  --sage-300: #a3bf95;
+  --sage-400: #7ea372;
+  --sage-500: #5e8556;   /* primary */
+  --sage-600: #486a42;
+  --sage-700: #3a5536;
+  --sage-800: #2f4530;
+  --sage-900: #1f2e22;
+
+  /* --- Cream · paper neutrals --------------------------------- */
+  --cream-50:  #faf7f1;   /* page bg — warm off-white */
+  --cream-100: #f5f0e6;
+  --cream-200: #ece5d4;
+  --cream-300: #ddd2ba;
+
+  /* --- Warm gray text + ink ----------------------------------- */
+  --ink-900: #2a2620;     /* body text */
+  --ink-700: #4a443b;
+  --ink-500: #6f6759;
+  --ink-400: #8a8270;
+  --ink-300: #b8b09e;
+  --ink-200: #d8d2c2;
+
+  /* --- Brand accent dots from logo ---------------------------- */
+  --logo-orange: #f0a020;
+  --logo-blue:   #94a8e8;
+  --logo-green:  #1ea876;   /* the brighter mark green */
+
+  /* --- Semantic ------------------------------------------------ */
+  --bg-page:        var(--cream-50);
+  --bg-surface:     #ffffff;
+  --bg-surface-alt: var(--cream-100);
+  --bg-muted:       var(--sage-50);
+  --bg-emphasis:    var(--sage-700);
+  --bg-emergency:   var(--logo-orange);
+
+  --fg-default:     var(--ink-900);
+  --fg-muted:       var(--ink-500);
+  --fg-subtle:      var(--ink-400);
+  --fg-on-emphasis: var(--cream-50);
+  --fg-link:        var(--sage-700);
+  --fg-link-hover:  var(--sage-800);
+
+  --border-soft:   #e7e0cf;
+  --border-strong: #d1c8b3;
+  --divider:       #ebe4d2;
+
+  --focus-ring: 0 0 0 3px rgba(94, 133, 86, 0.35);
+
+  /* --- Type ---------------------------------------------------- */
+  --font-serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --font-sans:  "Source Sans 3", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Display sizes — large for elderly readability */
+  --fs-display:  clamp(2.75rem, 5vw + 1rem, 4.5rem);   /* hero */
+  --fs-h1:       clamp(2rem, 3vw + 1rem, 3rem);
+  --fs-h2:       clamp(1.6rem, 2vw + 0.8rem, 2.25rem);
+  --fs-h3:       1.5rem;
+  --fs-h4:       1.25rem;
+  --fs-lead:     1.25rem;     /* intro paragraphs */
+  --fs-body:     1.0625rem;   /* 17px — generous body */
+  --fs-small:    0.9375rem;
+  --fs-caption:  0.8125rem;
+
+  --lh-tight:  1.15;
+  --lh-snug:   1.3;
+  --lh-normal: 1.55;
+  --lh-loose:  1.7;
+
+  /* --- Spacing (8px base) ------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  /* --- Radii — soft and friendly ------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* --- Shadows — subtle, warm ---------------------------------- */
+  --shadow-xs: 0 1px 2px rgba(60, 50, 30, 0.06);
+  --shadow-sm: 0 2px 6px rgba(60, 50, 30, 0.07);
+  --shadow-md: 0 8px 20px -8px rgba(60, 50, 30, 0.14);
+  --shadow-lg: 0 24px 48px -20px rgba(60, 50, 30, 0.22);
+}
+
+/* ------------------------------------------------------------- */
+/* Element defaults                                              */
+/* ------------------------------------------------------------- */
+html { font-size: 17px; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--fg-default);
+  background: var(--bg-page);
+  font-feature-settings: "kern", "liga", "ss01";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink-900);
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-h1); line-height: var(--lh-tight); }
+h2 { font-size: var(--fs-h2); line-height: var(--lh-snug); }
+h3 { font-size: var(--fs-h3); line-height: var(--lh-snug); }
+h4 { font-size: var(--fs-h4); line-height: var(--lh-snug); }
+
+.display {
+  font-family: var(--font-serif);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-loose);
+  color: var(--fg-muted);
+  text-wrap: pretty;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--sage-700);
+}
+
+p { line-height: var(--lh-loose); text-wrap: pretty; max-width: 70ch; }
+
+a {
+  color: var(--fg-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--fg-link-hover); }
+
+:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--radius-sm); }
