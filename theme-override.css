@@ -124,6 +124,9 @@ h1, h2, h3, h4 { color: #2a2620; }
   border-color: #ffffff;
 }
 
+/* Mobile-only hero image — hidden on desktop */
+.hero__mobile-image { display: none; }
+
 @media (max-width: 960px) {
   .hero--bg { min-height: 520px; padding: var(--space-9) 0; }
   .hero__inner--centered { max-width: 100%; }

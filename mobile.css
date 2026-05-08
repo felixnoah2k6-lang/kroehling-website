@@ -37,41 +37,56 @@
   .mobile-sheet__cta { margin: auto 18px 24px; padding: 18px; }
   .mobile-sheet__cta strong { font-size: 24px; }
 
-  /* HERO (Startseite) — image fully visible on mobile */
-  .hero { padding: 32px 0 48px; }
+  /* HERO (Startseite) — image FULLY visible above content on mobile */
+  .hero { padding: 0 0 32px; }
   .hero--bg {
     min-height: 0 !important;
     padding: 0 !important;
     display: block !important;
-    background-size: cover !important;
-    background-position: center 35% !important;
-    aspect-ratio: 4/5;
-    position: relative;
+    background-image: none !important;
+    background: var(--cream-100) !important;
   }
-  .hero--bg .hero__overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(20, 18, 14, 0.10) 0%,
-      rgba(20, 18, 14, 0.20) 35%,
-      rgba(20, 18, 14, 0.65) 65%,
-      rgba(20, 18, 14, 0.92) 100%
-    ) !important;
+  .hero--bg .hero__overlay { display: none !important; }
+  .hero__mobile-image {
+    display: block !important;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background: #f3ecdd;
   }
   .hero--bg .container.hero__inner {
-    position: absolute !important;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 0 18px 28px !important;
-    z-index: 2;
+    position: static !important;
+    padding: 28px 18px 12px !important;
+    z-index: auto;
   }
   .hero__inner { gap: 14px !important; display: block !important; }
+  .hero__content--light h1,
+  .hero__content--light .hero__title {
+    color: #2a2620 !important;
+  }
+  .hero__content--light .hero__title em {
+    color: #6e6754 !important;
+  }
+  .hero__content--light .hero__lead {
+    color: #4a4538 !important;
+  }
+  .hero__content--light .eyebrow {
+    color: #6e6754 !important;
+  }
+  .hero__content--light .hero__status--light {
+    color: #4a4538 !important;
+  }
+  .hero__content--light .btn--outline-light {
+    color: #2a2620 !important;
+    border-color: #b5a888 !important;
+    background: #ffffff !important;
+  }
   .hero__title {
     font-size: clamp(1.7rem, 7vw, 2.1rem) !important;
     margin: 8px 0 12px !important;
     line-height: 1.1 !important;
   }
-  .hero__lead { font-size: 15px !important; margin-bottom: 18px !important; line-height: 1.5 !important; }
+  .hero__lead { font-size: 15px !important; margin-bottom: 18px !important; line-height: 1.55 !important; }
   .hero__ctas {
     flex-direction: column;
     align-items: stretch;
