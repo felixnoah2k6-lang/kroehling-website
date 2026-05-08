@@ -229,6 +229,8 @@ h1, h2, h3, h4 { color: #2a2620; }
   stroke-width: 2 !important;
 }
 @media (max-width: 960px) {
+  .site-header__nav { display: none !important; }
+  .site-header__cta { display: none !important; }
   .menu-toggle {
     display: inline-flex !important;
     align-items: center;

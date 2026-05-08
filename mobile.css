@@ -23,8 +23,12 @@
 
   /* HEADER — logo more prominent, menu toggle clearly visible */
   .site-header__inner { height: 72px !important; gap: 8px; }
+  .site-header__brand { margin-right: auto; }
   .site-header__brand img { height: 46px !important; }
+  .site-header__nav { display: none !important; }
+  .site-header__cta { display: none !important; }
   .site-header__cta-mobile {
+    display: inline-flex !important;
     padding: 8px 12px !important;
     font-size: 13px !important;
     gap: 5px !important;
@@ -35,6 +39,8 @@
     width: 42px !important;
     height: 42px !important;
     flex: none;
+    align-items: center;
+    justify-content: center;
   }
   .menu-toggle i {
     width: 22px !important;
