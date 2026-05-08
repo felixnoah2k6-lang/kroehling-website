@@ -37,29 +37,54 @@
   .mobile-sheet__cta { margin: auto 18px 24px; padding: 18px; }
   .mobile-sheet__cta strong { font-size: 24px; }
 
-  /* HERO (Startseite) */
+  /* HERO (Startseite) — image fully visible on mobile */
   .hero { padding: 32px 0 48px; }
-  .hero--bg { min-height: 480px !important; padding: 40px 0 !important; }
-  .hero__inner { gap: 32px !important; }
+  .hero--bg {
+    min-height: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    background-size: cover !important;
+    background-position: center 20% !important;
+    aspect-ratio: 5/6;
+    position: relative;
+  }
+  .hero--bg .hero__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(42, 38, 32, 0.30) 0%,
+      rgba(42, 38, 32, 0.55) 55%,
+      rgba(42, 38, 32, 0.85) 100%
+    ) !important;
+  }
+  .hero--bg .container.hero__inner {
+    position: absolute !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 16px 32px !important;
+    z-index: 2;
+  }
+  .hero__inner { gap: 16px !important; display: block !important; }
   .hero__title {
-    font-size: clamp(2rem, 8vw, 2.5rem) !important;
-    margin: 12px 0 16px !important;
+    font-size: clamp(1.75rem, 7vw, 2.25rem) !important;
+    margin: 10px 0 14px !important;
     line-height: 1.1 !important;
   }
-  .hero__lead { font-size: 16px !important; margin-bottom: 24px !important; }
+  .hero__lead { font-size: 15.5px !important; margin-bottom: 20px !important; }
   .hero__ctas {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
     width: 100%;
+    margin-bottom: 16px;
   }
   .hero__ctas .btn {
     justify-content: center;
     width: 100%;
-    padding: 14px 20px;
-    font-size: 15px;
+    padding: 13px 18px;
+    font-size: 14.5px;
   }
-  .hero__status { font-size: 14px !important; }
+  .hero__status { font-size: 13.5px !important; }
   .hero__photo { aspect-ratio: 4/3; }
   .hero__hours-card {
     position: static !important;
