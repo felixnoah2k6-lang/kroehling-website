@@ -190,7 +190,6 @@ h1, h2, h3, h4 { color: #2a2620; }
   width: auto !important;
   max-width: 240px;
   object-fit: contain;
-  image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   filter: none !important;
 }
@@ -452,7 +451,6 @@ h1, h2, h3, h4 { color: #2a2620; }
   max-height: 80px;
   object-fit: contain;
   display: block;
-  image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   margin-bottom: 16px;
 }
