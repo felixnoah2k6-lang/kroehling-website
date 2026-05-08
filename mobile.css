@@ -21,16 +21,25 @@
 
   .container { padding: 0 16px; }
 
-  /* HEADER — logo more prominent */
-  .site-header__inner { height: 72px !important; gap: 10px; }
-  .site-header__brand img { height: 50px !important; }
+  /* HEADER — logo more prominent, menu toggle clearly visible */
+  .site-header__inner { height: 72px !important; gap: 8px; }
+  .site-header__brand img { height: 46px !important; }
   .site-header__cta-mobile {
-    padding: 9px 12px !important;
+    padding: 8px 12px !important;
     font-size: 13px !important;
     gap: 5px !important;
   }
   .site-header__cta-mobile i { width: 14px !important; height: 14px !important; }
-  .menu-toggle { width: 40px; height: 40px; }
+  .menu-toggle {
+    display: inline-flex !important;
+    width: 42px !important;
+    height: 42px !important;
+    flex: none;
+  }
+  .menu-toggle i {
+    width: 22px !important;
+    height: 22px !important;
+  }
 
   /* MOBILE SHEET */
   .mobile-sheet__nav { font-size: 24px; gap: 14px; padding: 20px 18px; }
