@@ -186,8 +186,12 @@ h1, h2, h3, h4 { color: #2a2620; }
 }
 .site-header__inner { height: 88px !important; }
 .site-header__brand img {
-  height: 60px !important;
-  width: auto;
+  height: 64px !important;
+  width: auto !important;
+  max-width: 240px;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
   filter: none !important;
 }
 .site-header__nav a { color: #2a2620; font-weight: 500; }
@@ -348,24 +352,30 @@ h1, h2, h3, h4 { color: #2a2620; }
 .contact-map__pin i { color: var(--ink-700); }
 
 /* ============================================================
-   Phone strip — warm dark
+   Phone strip — soft cream, restrained
    ============================================================ */
 .phone-strip {
-  background: #2a2620;
-  color: #ffffff;
+  background: var(--cream-100);
+  color: var(--ink-900);
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
 }
-.phone-strip h2 { color: #ffffff; }
-.phone-strip p { color: rgba(255, 255, 255, 0.82); }
+.phone-strip h2 { color: var(--ink-900); }
+.phone-strip p { color: var(--ink-700); }
 .phone-strip__big {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.16);
-  transition: background 0.2s ease;
+  background: #ffffff;
+  border-color: var(--border-soft);
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
-.phone-strip__big:hover { background: rgba(255,255,255,0.10); }
-.phone-strip__big i { color: rgba(255, 255, 255, 0.7); }
-.phone-strip__big-num { color: #ffffff; }
-.phone-strip__sub { color: rgba(255, 255, 255, 0.65); }
-.eyebrow.eyebrow--on-dark { color: rgba(240, 233, 215, 0.85); }
+.phone-strip__big:hover {
+  background: var(--cream-50);
+  border-color: var(--border-strong);
+}
+.phone-strip__big i { color: var(--ink-700); }
+.phone-strip__big-num { color: var(--ink-900); }
+.phone-strip__sub { color: var(--ink-500); }
+.eyebrow.eyebrow--on-dark { color: var(--ink-500); }
+.phone-strip .eyebrow--on-dark { color: var(--ink-500); }
 
 /* ============================================================
    Footer — refined warm cream, no orange line
