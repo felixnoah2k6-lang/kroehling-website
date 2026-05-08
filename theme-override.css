@@ -217,6 +217,7 @@ h1, h2, h3, h4 { color: #2a2620; }
   color: var(--ink-700) !important;
   border-radius: 8px !important;
   transition: background 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
 }
 .menu-toggle:hover {
   background: var(--cream-100) !important;
@@ -226,6 +227,13 @@ h1, h2, h3, h4 { color: #2a2620; }
   width: 22px !important;
   height: 22px !important;
   stroke-width: 2 !important;
+}
+@media (max-width: 960px) {
+  .menu-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* ============================================================
@@ -372,7 +380,7 @@ h1, h2, h3, h4 { color: #2a2620; }
 .contact-map__pin i { color: var(--ink-700); }
 
 /* ============================================================
-   Phone strip — soft cream, restrained
+   Phone strip — soft cream, centered, restrained
    ============================================================ */
 .phone-strip {
   background: var(--cream-100);
@@ -380,12 +388,28 @@ h1, h2, h3, h4 { color: #2a2620; }
   border-top: 1px solid var(--border-soft);
   border-bottom: 1px solid var(--border-soft);
 }
-.phone-strip h2 { color: var(--ink-900); }
-.phone-strip p { color: var(--ink-700); }
+.phone-strip__inner {
+  grid-template-columns: 1fr !important;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  justify-items: center;
+  gap: 28px !important;
+}
+.phone-strip h2 {
+  color: var(--ink-900);
+  text-align: center;
+}
+.phone-strip p {
+  color: var(--ink-700);
+  text-align: center;
+  margin: 0 auto;
+}
 .phone-strip__big {
   background: #ffffff;
   border-color: var(--border-soft);
   transition: background 0.2s ease, border-color 0.2s ease;
+  margin: 0 auto;
 }
 .phone-strip__big:hover {
   background: var(--cream-50);
@@ -419,8 +443,16 @@ h1, h2, h3, h4 { color: #2a2620; }
   line-height: 1.65;
 }
 .site-footer__brand img {
-  filter: none;
-  height: 70px !important;
+  filter: none !important;
+  height: auto !important;
+  width: auto !important;
+  max-width: 220px;
+  max-height: 80px;
+  object-fit: contain;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  margin-bottom: 16px;
 }
 .site-footer__head {
   color: #2a2620;
